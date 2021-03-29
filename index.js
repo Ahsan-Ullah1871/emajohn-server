@@ -16,6 +16,11 @@ const client = new MongoClient(uri, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 });
+
+app.get("/", (req, res) => {
+	res.send("Hello I am Working");
+});
+
 client.connect((err) => {
 	const productsCollections = client
 		.db("emajohnStore")
